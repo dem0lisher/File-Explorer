@@ -1,41 +1,56 @@
 {
-	"tweets": [
+	"structure": [
 		{
 			"id": "103648",
 			"name": "root",
-			"creator": "",
-			"size": "",
-			"date": "",
+			"creator": "system",
+			"size": "1.3mb",
+			"date": "1st Sep, 2018",
 			"type": "folder",
 			"parent_id": "000000"
 		},
 		{
 			"id": "357282",
 			"name": "apps",
+			"creator": "system",
+			"size": "1.3mb",
+			"date": "1st Sep, 2018",
 			"type": "folder",
 			"parent_id": "103648"
 		},
 		{
 			"id": "924672",
 			"name": "pictures",
+			"creator": "system",
+			"size": "1.3mb",
+			"date": "1st Sep, 2018",
 			"type": "folder",
 			"parent_id": "103648"
 		},
 		{
 			"id": "349624",
 			"name": "videos",
+			"creator": "system",
+			"size": "1.3mb",
+			"date": "1st Sep, 2018",
 			"type": "folder",
 			"parent_id": "103648"
 		},
 		{
 			"id": "239147",
 			"name": "docs",
+			"creator": "system",
+			"size": "1.3mb",
+			"date": "1st Sep, 2018",
 			"type": "folder",
 			"parent_id": "103648"
 		},
 		{
 			"id": "193462",
 			"name": "a",
+			"creator": "Aadhar",
+			"size": "232kb",
+			"date": "1st Sep, 2018",
 			"type": "file",
 			"ext": ".pdf",
 			"parent_id": "103648"
@@ -43,6 +58,9 @@
 		{
 			"id": "963472",
 			"name": "b",
+			"creator": "Admin",
+			"size": "314kb",
+			"date": "1st Sep, 2018",
 			"type": "file",
 			"ext": ".jpg",
 			"parent_id": "103648"
@@ -50,12 +68,18 @@
 		{
 			"id": "465474",
 			"name": "work",
+			"creator": "system",
+			"size": "1.3mb",
+			"date": "1st Sep, 2018",
 			"type": "folder",
 			"parent_id": "239147"
 		},
 		{
 			"id": "985368",
 			"name": "c",
+			"creator": "Aadhar",
+			"size": "645kb",
+			"date": "1st Sep, 2018",
 			"type": "file",
 			"ext": ".pdf",
 			"parent_id": "239147"
@@ -63,6 +87,9 @@
 		{
 			"id": "245963",
 			"name": "d",
+			"creator": "Admin",
+			"size": "327kb",
+			"date": "1st Sep, 2018",
 			"type": "file",
 			"ext": ".docx",
 			"parent_id": "239147"
@@ -70,6 +97,9 @@
 		{
 			"id": "864368",
 			"name": "e",
+			"creator": "system",
+			"size": "836kb",
+			"date": "1st Sep, 2018",
 			"type": "file",
 			"ext": ".pdf",
 			"parent_id": "465474"
@@ -77,6 +107,9 @@
 		{
 			"id": "334128",
 			"name": "f",
+			"creator": "Aadhar",
+			"size": "190kb",
+			"date": "1st Sep, 2018",
 			"type": "file",
 			"ext": ".ts",
 			"parent_id": "465474"

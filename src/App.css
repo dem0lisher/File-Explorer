@@ -27,22 +27,22 @@ section{
   border: 1px solid #DDE0E4;
   border-radius: 8px;
 }
-#search-bar::-webkit-input-placeholder{
+input::-webkit-input-placeholder{
   font-size: 14px;
   color: #AFB2B6;
   font-family: 'Lato Regular';
 }
-#search-bar::-moz-placeholder{
+input::-moz-placeholder{
   font-size: 14px;
   color: #AFB2B6;
   font-family: 'Lato Regular';
 }
-#search-bar:-ms-input-placeholder{
+input:-ms-input-placeholder{
   font-size: 14px;
   color: #AFB2B6;
   font-family: 'Lato Regular';
 }
-#search-bar:-moz-placeholder{
+input:-moz-placeholder{
   font-size: 14px;
   color: #AFB2B6;
   font-family: 'Lato Regular';
@@ -125,7 +125,7 @@ section{
   padding: 25px;
   width: 30%;
 }
-.modal-title{
+#info-modal > .modal-title{
   position: relative;
   padding: 0 0 50px 0;
 }
@@ -136,7 +136,7 @@ section{
   letter-spacing: 0;
   font-weight: normal;
 }
-#close-btn{
+.close-btn{
   cursor: pointer;
   position: absolute;
   right: 5px;
@@ -158,4 +158,48 @@ section{
 .info-item-value{
   padding: 0 0 0 5px;
   color: #81878C;
+}
+
+#create-new-modal > .modal-title{
+  position: relative;
+  padding: 0 0 15px 0;
+}
+.create-new-form-ctn{
+  padding: 30px 0 0 0;
+}
+.type-selector{
+  border: 1px solid #DDE0E4;
+  border-radius: 8px;
+  width: 128px;
+}
+.type-item{
+  color: #535B62;
+  width: 50%;
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#type-file{
+  border-radius: 8px 0 0 8px;
+}
+#type-folder{
+  border-radius: 0 8px 8px 0;
+}
+.selected-type{
+  color: #fff;
+  background-color: #4AB7FF;
+}
+.create-new-form-field{
+  border: 1px solid rgba(221,224,228,0.70);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 0 0 15px 0;
+}
+#create-item-btn{
+  background-color: #4AB7FF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 80px;
+  color: #fff;
+  font-size: 14px;
 }
