@@ -15,7 +15,14 @@ export default class FolderItem extends Component {
       data: {parent_id: this.props.folderData.id},
       crossOrigin: true
     }).then((data) => {
-        this.props.update_current_data(this.props.folderData, data);
+        var newPath;
+        if(this.props.current_path.charAt(this.props.current_path.length-1) === '/'){
+          newPath = this.props.current_path.substring(0, this.props.current_path.length-1)+'/'+this.props.folderData.name;
+        }
+        else{
+          newPath = this.props.current_path+'/'+this.props.folderData.name;
+        }
+        this.props.update_current_data(this.props.folderData, data, newPath);
       });
   }
 

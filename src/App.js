@@ -14,6 +14,7 @@ export default class App extends Component {
     this.state = {currentData: [], childData: [], currentPath: ''};
     this.updateCurrentData = this.updateCurrentData.bind(this);
     this.populateItems = this.populateItems.bind(this);
+    this.getCurrentBreadcrumbs = this.getCurrentBreadcrumbs.bind(this);
   }
 
   componentDidMount(){
@@ -62,6 +63,37 @@ export default class App extends Component {
     );
   }
 
+  getCurrentBreadcrumbs(){
+    var currentPath = this.state.currentPath;
+    var dirStructure = currentPath.split('/'), breadcrumbs = [];
+    if(dirStructure.length > 1 && dirStructure[dirStructure.length-1] === ''){
+      dirStructure.splice(dirStructure.length-1, 1);
+    }
+    for(var i=0;i< dirStructure.length;i++){
+      if(i === dirStructure.length-1){
+        if(dirStructure[i] === ''){
+          breadcrumbs.push(<span id="current-dir">root</span>)
+        }
+        else{
+          breadcrumbs.push(<span id="current-dir">{dirStructure[i]}</span>);
+        }
+      }
+      else{
+        if(dirStructure[i] === ''){
+          breadcrumbs.push(<span>root / </span>)
+        }
+        else{
+          breadcrumbs.push(<span>{dirStructure[i]+" / "}</span>);
+        }
+      }
+    }
+    return(
+      <div id="dir-breadcrumb">
+        {breadcrumbs}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="flex-row" style={{height: '500px'}}>
@@ -71,7 +103,7 @@ export default class App extends Component {
           <div className="flex-row flex-space-between">
             <div className="flex-row flex-valign">
               <img src="arrow-green-circle.png" id="back-btn" alt="Up Icon" />
-              <div id="dir-breadcrumb">root / movies / <span id="current-dir">inception</span></div>
+              {this.getCurrentBreadcrumbs()}
             </div>
             <div id="search-bar-ctn">
               <input type="search" id="search-bar" placeholder="Search for anything" />
