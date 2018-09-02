@@ -46,7 +46,7 @@ export default class App extends Component {
     var explorerItems = [];
     for(var i=0;i< this.state.childData.length;i++){
       if(this.state.childData[i].type === "folder"){
-        explorerItems.push(<FolderItem folderData={this.state.childData[i]} current_path={this.state.currentPath} update_current_data={this.updateCurrentData} />);
+        explorerItems.push(<FolderItem folderData={this.state.childData[i]} currentPath={this.state.currentPath} updateCurrentData={this.updateCurrentData} />);
       }
       else if(this.state.childData[i].type === "file"){
         explorerItems.push(<FileItem fileData={this.state.childData[i]} />);

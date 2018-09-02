@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ContextMenuTrigger } from 'react-contextmenu';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 export default class FolderItem extends Component {
   constructor(props){
@@ -16,13 +17,13 @@ export default class FolderItem extends Component {
       crossOrigin: true
     }).then((data) => {
         var newPath;
-        if(this.props.current_path.charAt(this.props.current_path.length-1) === '/'){
-          newPath = this.props.current_path.substring(0, this.props.current_path.length-1)+'/'+this.props.folderData.name;
+        if(this.props.currentPath.charAt(this.props.currentPath.length-1) === '/'){
+          newPath = this.props.currentPath.substring(0, this.props.currentPath.length-1)+'/'+this.props.folderData.name;
         }
         else{
-          newPath = this.props.current_path+'/'+this.props.folderData.name;
+          newPath = this.props.currentPath+'/'+this.props.folderData.name;
         }
-        this.props.update_current_data(this.props.folderData, data, newPath);
+        this.props.updateCurrentData(this.props.folderData, data, newPath);
       });
   }
 
