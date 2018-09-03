@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import FolderItem from './FolderItem';
 import FileItem from './FileItem';
-import Menu from './Menu';
+import FolderMenu from './FolderMenu';
+import FileMenu from './FileMenu';
 import InfoModal from './InfoModal';
 import CreateNewModal from './CreateNewModal';
 import './App.css';
@@ -11,10 +12,14 @@ export default class App extends Component {
 
   constructor(props){
     super(props);
-    this.state = {currentData: [], childData: [], currentPath: ''};
+    this.state = {currentData: [], childData: [], currentPath: '', selectedDirData: ''};
     this.updateCurrentData = this.updateCurrentData.bind(this);
+    this.updateChildData = this.updateChildData.bind(this);
+    this.updateSelectedData = this.updateSelectedData.bind(this);
+    this.openCreateNewModal = this.openCreateNewModal.bind(this);
     this.populateItems = this.populateItems.bind(this);
     this.getCurrentBreadcrumbs = this.getCurrentBreadcrumbs.bind(this);
+    this.getCreateNewModal = this.getCreateNewModal.bind(this);
   }
 
   componentDidMount(){
@@ -42,6 +47,18 @@ export default class App extends Component {
     this.setState({ currentData: updatedCurrentData, childData: updatedChildData, currentPath: updatedCurrentPath });
   }
 
+  updateChildData(updatedChildData){
+    this.setState({ childData: updatedChildData });
+  }
+
+  updateSelectedData(updatedSelectedDirData){
+    this.setState({ selectedDirData: updatedSelectedDirData });
+  }
+
+  openCreateNewModal(){
+    $("#create-new-modal-ctn").removeClass('hidden');
+  }
+
   populateItems(){
     var explorerItems = [];
     for(var i=0;i< this.state.childData.length;i++){
@@ -55,10 +72,11 @@ export default class App extends Component {
     return(
       <div id="explorer-item-section" className="flex-row flex-valign">
         {explorerItems}
-        <div className="add-new-item">
+        <div className="add-new-item" onClick={this.openCreateNewModal}>
           <img src="add-new.png" id="add-new-icon" alt="Add New Icon" />
         </div>
-        <Menu />
+        <FolderMenu childData={this.state.childData} updateChildData={this.updateChildData} updateSelectedData={this.updateSelectedData} />
+        <FileMenu childData={this.state.childData} updateChildData={this.updateChildData} updateSelectedData={this.updateSelectedData} />
       </div>
     );
   }
@@ -94,6 +112,12 @@ export default class App extends Component {
     );
   }
 
+  getCreateNewModal(){
+    if(this.state.currentData && this.state.currentData.length){
+      return(<CreateNewModal currentDirId={this.state.currentData[0].id} />);
+    }
+  }
+
   render() {
     return (
       <div className="flex-row" style={{height: '500px'}}>
@@ -112,8 +136,8 @@ export default class App extends Component {
           </div>
           {this.populateItems()}
         </section>
-        <InfoModal />
-        <CreateNewModal />
+        <InfoModal dirData={this.state.selectedDirData} />
+        {this.getCreateNewModal()}
       </div>
     );
   }

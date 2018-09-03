@@ -51,3 +51,6 @@ a{
 	src: url(./fonts/Lato-Regular.woff);
 	src: url(./fonts/Lato-Regular.woff2);
 }
+.hidden{
+	display: none !important;
+}

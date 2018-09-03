@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ContextMenuTrigger } from 'react-contextmenu';
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
 
 export default class FolderItem extends Component {
   constructor(props){
@@ -29,7 +28,7 @@ export default class FolderItem extends Component {
 
   render() {
     return (
-      <ContextMenuTrigger>
+      <ContextMenuTrigger id="folder-context-menu" attributes={{'data-dirdata': JSON.stringify(this.props.folderData), className: "folder-item-ctn"}}>
         <div className="folder-item flex-column flex-space-between" onDoubleClick={this.getFolderData}>
           <div className="folder-icon-ctn">
             <img src="Folder.png" alt="Folder Icon" />

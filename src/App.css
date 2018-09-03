@@ -60,11 +60,13 @@ input:-moz-placeholder{
   margin-top: 40px;
   flex-wrap: wrap;
 }
+.folder-item-ctn, .file-item-ctn, #add-new-icon{
+  margin: 0 70px 25px 0;
+}
 .file-item, .folder-item, #add-new-icon{
   height: 113px;
   width: 96px;
   cursor: pointer;
-  margin: 0 70px 25px 0;
 }
 .file-item, .folder-item{
   border-radius: 8px;
@@ -202,4 +204,5 @@ input:-moz-placeholder{
   padding: 10px 80px;
   color: #fff;
   font-size: 14px;
+  cursor: pointer;
 }
